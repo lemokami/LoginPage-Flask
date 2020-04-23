@@ -1,0 +1,33 @@
+{% extends "index.html"%} {% block body %}
+<div class="main-container">
+  <div class="sub-1">
+    <h1>Login</h1>
+    <form action="/submit" method="post" id="login">
+      <div class="email ip-div">
+        <br />
+        <input type="text" class="email-box" name="email" />
+        <br />
+      </div>
+      <div class="passwd ip-div">
+        <br />
+        <input type="password" class="p-box" name="password" />
+        <br />
+      </div>
+      <input type="submit" value="Login" class="submit ip-box" />
+      <span style="margin-left: 15px;font-weight:{{ weight }};"
+        >{{ info }} <a href="/signup" class="al-link">{{ link }}</a></span
+      >
+    </form>
+  </div>
+  <div class="sub-2">
+    <a href="#"
+      ><img
+        src="{{ url_for('static', filename='images/349.png')
+    }}"
+        alt="monkey"
+        class="img"
+    /></a>
+  </div>
+</div>
+<script src="{{ url_for('static',filename='js/script.js') }}"></script>
+{% endblock %}

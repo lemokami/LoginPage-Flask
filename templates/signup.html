@@ -1,0 +1,39 @@
+{% extends "index.html"%} {% block body %}
+<div class="main-container">
+  <div class="sub-1">
+    <h1>SignUp</h1>
+    <form action="/registered" method="post" id="signup">
+      <div class="email ip-div">
+        <br />
+        <input type="text" name="email" class="email-box" />
+        <br />
+      </div>
+      <div class="passwd ip-div">
+        <br />
+        <input type="password" name="password" class="p-box" />
+        <br />
+      </div>
+      <div class="passwd ip-div con-pass">
+        <br />
+        <input type="password" class="p-box confirm" />
+        <br />
+      </div>
+      <input type="submit" value="Register" class="submit ip-box" />
+      <span style="margin-left: 15px;"
+        >Already have an account?
+        <a href="/login" class="al-link">Login</a></span
+      >
+    </form>
+  </div>
+  <div class="sub-2">
+    <a href="#"
+      ><img
+        src="{{ url_for('static', filename='images/437.png')
+    }}"
+        alt="monkey"
+        class="img"
+    /></a>
+  </div>
+</div>
+<script src="{{ url_for('static',filename='js/script2.js') }}"></script>
+{% endblock %}
