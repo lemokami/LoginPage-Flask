@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --err-mess: " ";
+  --err-mess2: " ";
+  --err-mess3: " ";
+}
+body {
+  font-family: "Roboto";
+  font-weight: 300;
+}
+.al-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 400;
+}
+.al-link:hover {
+  text-decoration: underline;
+}
+h1 {
+  font-family: "Playfair Display";
+  font-size: 70px;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+.main-container {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+.sub-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ip-div {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 23px;
+  padding-bottom: 30px;
+  color: #404040;
+}
+
+.email-box,
+.p-box {
+  height: 42px;
+  width: 550px;
+  padding-left: 18px;
+  font-size: 25px;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 3px;
+}
+.email::before {
+  content: "Email Address";
+  font-size: 21px;
+}
+.passwd::before {
+  content: "Password";
+  font-size: 21px;
+}
+.email::after {
+  content: var(--err-mess);
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff4e4e;
+}
+
+.passwd::after {
+  content: var(--err-mess2);
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff4e4e;
+}
+
+.con-pass::before {
+  content: "Confirm Password";
+  font-size: 21px;
+}
+.con-pass::after {
+  content: var(--err-mess3);
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff4e4e;
+}
+.submit {
+  border: none;
+  background-color: #404040;
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 19px;
+  color: #ffffff;
+  height: 55px;
+  width: 137px;
+}
+.submit:hover {
+  background-color: #222222;
+}
+.sub-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img {
+  height: 620px;
+  padding-left: 90px;
+}
+
+.img:hover {
+  transition: ease-out 1s;
+  transform: translateY(-10px);
+}
