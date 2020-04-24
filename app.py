@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
 
 
 class User(db.Model):
@@ -35,7 +37,7 @@ def submit():
     email = request.form.get('email')
     password = request.form.get('password')
     user = User.query.filter_by(email=email).first()
-    if user != None and user.passwd == password:
+    if user != None and bcrypt.check_password_hash(user.passwd, password):
         return render_template('greet.html')
     else:
         return render_template('error.html')
@@ -46,7 +48,7 @@ def reg():
     info = "You have been Registered!"
     weight = 500
     email = request.form.get('email')
-    password = request.form.get('password')
+    password = bcrypt.generate_password_hash(request.form.get('password'))
     print(email, password)
     db.session.add(User(email, password))
     db.session.commit()
