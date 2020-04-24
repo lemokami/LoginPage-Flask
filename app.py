@@ -49,7 +49,6 @@ def reg():
     weight = 500
     email = request.form.get('email')
     password = bcrypt.generate_password_hash(request.form.get('password'))
-    print(email, password)
     db.session.add(User(email, password))
     db.session.commit()
     return render_template('login.html', info=info, weight=weight)
